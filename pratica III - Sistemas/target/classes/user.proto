@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package proto;
+
+option java_multiple_files = true;
+
+message User {
+	
+	int32 id = 1;
+	string titulo = 2;
+	string endereco = 3;
+	string tipo = 4;
+	int32 numeroQuartos = 5;
+	int32 numeroGaragens = 6;
+	double areaConstruida = 7;
+	double areaTerreno = 8;
+	double preco = 9;
+
+}
+
+message CreateUserRequest {
+    User user = 1;
+}
+
+message CreateUserResponse {
+    User user = 1;
+}
+
+message DeleteUserRequest {
+    int32 userId = 1;
+}
+
+message DeleteUserResponse {
+    int32 userId = 1;
+}
+
+message GetUserRequest {
+	int32 userId = 1;
+}
+
+message GetUserResponse {
+    User user = 1;
+}
+
+message ListUserRequest {
+
+}
+
+message ListUserResponse {
+    repeated User user = 1;
+}
+
+message UpdateUserRequest {
+	User user =  1;
+}
+
+message UpdateUserResponse {
+	User user = 1;
+}
+
+service UserService {
+    rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+    rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
+    rpc GetUser(GetUserRequest) returns (GetUserResponse);
+    rpc ListUser(ListUserRequest) returns (ListUserResponse);
+    rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
+}
