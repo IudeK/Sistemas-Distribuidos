@@ -1,4 +1,4 @@
-Uma aplicação gRPC que funciona como um CRUD para gerenciamento de imóveis de uma
+Uma aplicação gRPC que funciona como um CRUD para gerenciamento de imóveis de uma<br>
 imobiliária. Cada imóvel é composto por:
 ● Título
 ● Endereço
